@@ -1,20 +1,23 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux'; // Added import
+import { login } from '../redux/action/authActions';
 import { Footer, Navbar } from '../components';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+  const dispatch = useDispatch(); // Added dispatch
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.post('/api/login', { email, password });
       console.log('Login successful:', response.data);
+      dispatch(login()); // Dispatch login action
       navigate('/');
-      // Redirect to home page or set authentication state
     } catch (error) {
       console.error('Error logging in:', error);
       alert(error.response.data.error);

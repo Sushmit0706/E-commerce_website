@@ -1,5 +1,6 @@
 import React from 'react';
-import { createRoot } from 'react-dom';
+// import { createRoot } from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import '../node_modules/font-awesome/css/font-awesome.min.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
