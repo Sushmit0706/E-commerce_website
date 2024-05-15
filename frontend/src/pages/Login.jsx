@@ -1,19 +1,23 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Footer, Navbar } from '../components';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.post('/api/login', { email, password });
       console.log('Login successful:', response.data);
+      navigate('/Home');
+      // Redirect to home page or set authentication state
     } catch (error) {
       console.error('Error logging in:', error);
+      alert(error.response.data.error);
     }
   };
 
