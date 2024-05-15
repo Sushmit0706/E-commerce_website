@@ -13,7 +13,7 @@ const Login = () => {
     try {
       const response = await axios.post('/api/login', { email, password });
       console.log('Login successful:', response.data);
-      navigate('/Home');
+      navigate('/');
       // Redirect to home page or set authentication state
     } catch (error) {
       console.error('Error logging in:', error);
