@@ -1,12 +1,11 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import { logout } from "../redux/action/authActions";
 import logo_light from "../assets/darkbag.png";
-import logo_dark from "../assets/lightbag.png";
-import toogle_light from "../assets/night.png";
 import toogle_dark from "../assets/day.png";
+import toogle_light from "../assets/night.png";
 import "../index.css";
+import { logout } from "../redux/action/authActions";
 
 const Navbar = ({ theme, setTheme }) => {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
