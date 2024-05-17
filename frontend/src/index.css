@@ -1,0 +1,69 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.dark {
+  background-color: #222;
+  color: #fff;
+}
+
+/* index.css */
+
+/* Light theme styles */
+.light .navbar {
+  background-color: #fff;
+  color: #000;
+}
+
+.light .nav-link {
+  color: #000;
+}
+
+.light .btn-outline-dark {
+  border-color: #000;
+  color: #000;
+}
+
+.light .btn-outline-dark:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.light .logo {
+  filter: none; /* No filter for light logo */
+}
+
+.light .toggle-icon {
+  filter: invert(0); /* No filter for light theme toggle */
+}
+
+/* Dark theme styles */
+.dark .navbar {
+  background-color: #333;
+  color: #fff;
+}
+
+.dark .nav-link {
+  color: #fff;
+}
+
+.dark .btn-outline-dark {
+  border-color: #fff;
+  color: #fff;
+}
+
+.dark .btn-outline-dark:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.dark .logo {
+  filter: invert(1); /* Invert colors for dark logo */
+}
+
+.dark .toggle-icon {
+  filter: invert(1); /* Invert colors for dark theme toggle */
+}
