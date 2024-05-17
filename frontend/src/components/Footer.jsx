@@ -15,57 +15,50 @@ const Footer = () => {
           <div class="row footerContent">
             <div class="col-lg-3 pt-5  pt-lg-0 col-sm-6">
               <div class="logo pcLogo pb-3">
-                <Link to="https://www.thapar.edu/">
-                  <img src={Logo} alt="Thapar-Logo" className="img-fluid" />
-                </Link>
+                {/* <Link to="https://www.thapar.edu/"> */}
+                <img src={Logo} alt="Thapar-Logo" className="img-fluid" />
+                {/* </Link> */}
               </div>
               <div class=" text-white pt-2 pb-3">
                 <h6 className="liWrapper">
-                  Thapar Institute of Engineering & Technology (TIET) in
-                  Patiala, India, is a distinguished technical university
-                  renowned for its quality education, research, and innovation
-                  in engineering and technology fields, offering diverse
-                  programs.
+                  this is our kapdalelo website where you can see differeent
+                  type of fashion clothes with affordable price .
                 </h6>
               </div>
-
             </div>
 
             <div class="col-lg-3 col-sm-6">
               <div class="contactContent pt-5 pt-lg-0 text-white ps-lg-3 pe-md-2">
                 <h6 class="quickHeading fw-bold">Contact</h6>
                 <div class=" pt-lg-5 pt-sm-5 pt-3 d-flex flex-column gap-4">
-                  <a href="https://www.thapar.edu/">
-                    <div class="liWrapper d-flex justify-content-start align-items-center gap-3">
-                      <i class="fa-solid fa-building"></i>
-                      <h6>Centre for Training & Development (CTD)</h6>
-                    </div>
-                  </a>
+                  {/* <a href="https://www.thapar.edu/"> */}
+                  <div class="liWrapper d-flex justify-content-start align-items-center gap-3">
+                    <i class="fa-solid fa-building"></i>
+                    <h6>abcd ....</h6>
+                  </div>
+                  {/* </a> */}
                   <div class="liWrapper d-flex justify-content-start align-items-center gap-3">
                     <i class="fa-solid fa-location-dot"></i>
-                    <h6>
-                      Thapar Institute of Engineering & Technology Bhadson Road,
-                      Patiala Punjab, 147004
-                    </h6>
+                    <h6>abcd123@gmail.com</h6>
                   </div>
-                  <a href="mailto:training@thapar.edu">
-                    <h6 class="liWrapper mb-0 d-flex justify-content-start  align-items-center gap-3">
-                      <i class="fa-solid fa-paper-plane"></i>
-                      <h6>training@thapar.edu</h6>
-                    </h6>
-                  </a>
+                  {/* <a href="mailto:training@thapar.edu"> */}
+                  <h6 class="liWrapper mb-0 d-flex justify-content-start  align-items-center gap-3">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    {/* <h6>training@thapar.edu</h6> */}
+                  </h6>
+                  {/* </a> */}
                   <div class="social ms-4 ps-2">
                     <h6 className="text-white">Follow us</h6>
                     <div class="icons  d-flex align-items-start gap-3">
-                      <a href="https://www.facebook.com/officialTIET/">
-                        <i class="fa-brands fa-facebook-f"></i>
-                      </a>
-                      <a href="https://www.instagram.com/ctd_tiet/?hl=en">
-                        <i class="fa-brands fa-instagram"></i>
-                      </a>
-                      <a href="https://in.pinterest.com/pin/1061160730921621150/">
-                        <i class="fa-brands fa-pinterest"></i>
-                      </a>
+                      {/* <a href="https://www.facebook.com/officialTIET/"> */}
+                      <i class="fa-brands fa-facebook-f"></i>
+                      {/* </a> */}
+                      {/* <a href="https://www.instagram.com/ctd_tiet/?hl=en"> */}
+                      <i class="fa-brands fa-instagram"></i>
+                      {/* </a> */}
+                      {/* <a href="https://in.pinterest.com/pin/1061160730921621150/"> */}
+                      <i class="fa-brands fa-pinterest"></i>
+                      {/* </a> */}
                     </div>
                   </div>
                 </div>
@@ -75,23 +68,26 @@ const Footer = () => {
               <div class=" text-white pt-5 pt-lg-0 ps-lg-3">
                 <h6 className="fw-bolder quickHeading">Modules</h6>
                 <div class="pt-sm-5 pt-lg-5 pt-3 d-flex flex-column gap-4">
-                  <Link to="/QUANTITATIVE_APTITUDE">
+                  <Link to="/">
                     <h6 className="liWrapper d-flex justify-content-start  align-items-center gap-3">
-                      <i class="fa-solid fa-file"></i>Quantitative Aptitude</h6>
+                      <i class="fa-solid fa-file"></i>Home
+                    </h6>
                   </Link>
 
-                  <Link to="/DATA_INTERPRETATION">
+                  <Link to="/product">
                     <h6 className="liWrapper d-flex justify-content-start  align-items-center gap-3">
-                      <i class="fa-solid fa-file"></i>Data Interpretation</h6>
+                      <i class="fa-solid fa-file"></i>Products
+                    </h6>
                   </Link>
 
-                  <Link to="/LOGICAL_REASONING">
+                  <Link to="/about">
                     <h6 className="liWrapper d-flex justify-content-start  align-items-center gap-3">
-                      <i class="fa-solid fa-file"></i>Logical Reasoning</h6>
+                      <i class="fa-solid fa-file"></i>About us
+                    </h6>
                   </Link>
-                  <Link to="/VERBAL_ABILITY_AND_READING_COMPREHENSION">
+                  <Link to="/contact">
                     <h6 className="liWrapper d-flex justify-content-start  align-items-center gap-3 mb-0">
-                      <i class="fa-solid fa-file"></i> Verbal Ability &amp; Reading Comprehension
+                      <i class="fa-solid fa-file"></i> Contact us
                     </h6>
                   </Link>
                 </div>
@@ -104,30 +100,29 @@ const Footer = () => {
                   <a href="https://testknock.com/">
                     <div class="liWrapper d-flex justify-content-start align-items-center gap-3">
                       <i class="fa-solid fa-building"></i>
-                      <h6>TestKnock Technologies</h6>
+                      <h6>abcd....</h6>
                     </div>
                   </a>
                   <div class="liWrapper d-flex justify-content-start align-items-center gap-3">
                     <i class="fa-solid fa-location-dot"></i>
                     <h6>
-                      Office No. - 42, Durga Vihar Near Amrapali Saphhire
-                      Sector-45, Noida, 201301
+                     example 
                     </h6>
                   </div>
                   <a href="mailto:info@testknock.com">
                     <div class=" liWrapper mb-0 d-flex justify-content-start  align-items-center gap-3">
                       <i class="fa-solid fa-paper-plane"></i>
-                      <h6>info@testknock.com</h6>
+                      <h6>example@gamil.com</h6>
                     </div>
                   </a>
-                  <a href="tel:9953617456">
+                  {/* <a href="tel:9953617456"> */}
                     <div class="liWrapper d-flex justify-content-start align-items-center gap-3">
                       <i class="fa-solid fa-phone-volume"></i>
                       <h6 className="d-flex justify-content-center align-items-center">
-                        +91- 9953617456<br></br>
+                        {/* +91- 9953617456<br></br> */}
                       </h6>
                     </div>
-                  </a>
+                  {/* </a> */}
                 </div>
               </div>
             </div>
