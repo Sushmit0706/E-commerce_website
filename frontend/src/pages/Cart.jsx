@@ -14,7 +14,7 @@ const Cart = () => {
         <div className="row">
           <div className="col-md-12 py-5 bg-light text-center">
             <h4 className="p-3 display-5">Your Cart is Empty</h4>
-            <Link to="/" className="btn  btn-outline-dark mx-4">
+            <Link to="/" className="btn btn-outline-dark mx-4">
               <i className="fa fa-arrow-left"></i> Continue Shopping
             </Link>
           </div>
@@ -41,6 +41,7 @@ const Cart = () => {
     state.map((item) => {
       return (totalItems += item.qty);
     });
+
     return (
       <>
         <section className="h-100 gradient-custom">
@@ -61,13 +62,17 @@ const Cart = () => {
                                 className="bg-image rounded"
                                 data-mdb-ripple-color="light"
                               >
-                                <img
-                                  src={item.image}
-                                  // className="w-100"
-                                  alt={item.title}
-                                  width={100}
-                                  height={75}
-                                />
+                                {item.image ? (
+                                  <img
+                                    src={item.image}
+                                    alt={item.title}
+                                    width={100}
+                                    height={75}
+                                    className="w-100"
+                                  />
+                                ) : (
+                                  <div>No Image</div>
+                                )}
                               </div>
                             </div>
 
@@ -75,8 +80,6 @@ const Cart = () => {
                               <p>
                                 <strong>{item.title}</strong>
                               </p>
-                              {/* <p>Color: blue</p>
-                              <p>Size: M</p> */}
                             </div>
 
                             <div className="col-lg-4 col-md-6">
