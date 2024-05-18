@@ -8,9 +8,8 @@ import axios from "axios";
 
 const Products = () => {
   const [data, setData] = useState([]);
-  const [filter, setFilter] = useState(data);
-  const [loading, setLoading] = useState(false);
-  let componentMounted = true;
+  const [filter, setFilter] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const dispatch = useDispatch();
 
@@ -19,35 +18,29 @@ const Products = () => {
   };
 
   useEffect(() => {
+    let componentMounted = true;
+
     const getProducts = async () => {
       setLoading(true);
-      const options = {
-        method: 'GET',
-        url: 'https://zappos1.p.rapidapi.com/brands/list',
-        headers: {
-          'X-RapidAPI-Key': '2c194e6fc2mshabe41a2bb5f7224p10af16jsndfe983f5ccfd',
-          'X-RapidAPI-Host': 'zappos1.p.rapidapi.com'
-        }
-      };
 
       try {
-        const response = await axios.request(options);
+        const response = await axios.get('https://api.escuelajs.co/api/v1/products');
         if (componentMounted) {
           setData(response.data);
           setFilter(response.data);
           setLoading(false);
         }
       } catch (error) {
-        console.error(error);
+        console.error('Error fetching the API:', error);
         setLoading(false);
       }
-
-      return () => {
-        componentMounted = false;
-      };
     };
 
     getProducts();
+
+    return () => {
+      componentMounted = false;
+    };
   }, []);
 
   const Loading = () => {
@@ -56,30 +49,17 @@ const Products = () => {
         <div className="col-12 py-5 text-center">
           <Skeleton height={40} width={560} />
         </div>
-        <div className="col-md-4 col-sm-6 col-xs-8 col-12 mb-4">
-          <Skeleton height={592} />
-        </div>
-        <div className="col-md-4 col-sm-6 col-xs-8 col-12 mb-4">
-          <Skeleton height={592} />
-        </div>
-        <div className="col-md-4 col-sm-6 col-xs-8 col-12 mb-4">
-          <Skeleton height={592} />
-        </div>
-        <div className="col-md-4 col-sm-6 col-xs-8 col-12 mb-4">
-          <Skeleton height={592} />
-        </div>
-        <div className="col-md-4 col-sm-6 col-xs-8 col-12 mb-4">
-          <Skeleton height={592} />
-        </div>
-        <div className="col-md-4 col-sm-6 col-xs-8 col-12 mb-4">
-          <Skeleton height={592} />
-        </div>
+        {[...Array(6)].map((_, index) => (
+          <div key={index} className="col-md-4 col-sm-6 col-xs-8 col-12 mb-4">
+            <Skeleton height={592} />
+          </div>
+        ))}
       </>
     );
   };
 
   const filterProduct = (cat) => {
-    const updatedList = data.filter((item) => item.category === cat);
+    const updatedList = data.filter((item) => item.category.name === cat);
     setFilter(updatedList);
   };
 
@@ -88,22 +68,20 @@ const Products = () => {
       <>
         <div className="buttons text-center py-5">
           <button className="btn btn-outline-dark btn-sm m-2" onClick={() => setFilter(data)}>All</button>
-          <button className="btn btn-outline-dark btn-sm m-2" onClick={() => filterProduct("men's clothing")}>Men's Clothing</button>
-          <button className="btn btn-outline-dark btn-sm m-2" onClick={() => filterProduct("women's clothing")}>
-            Women's Clothing
-          </button>
-          <button className="btn btn-outline-dark btn-sm m-2" onClick={() => filterProduct("jewelery")}>Jewelery</button>
-          <button className="btn btn-outline-dark btn-sm m-2" onClick={() => filterProduct("electronics")}>Electronics</button>
+          <button className="btn btn-outline-dark btn-sm m-2" onClick={() => filterProduct("Clothes")}>Clothes</button>
+          <button className="btn btn-outline-dark btn-sm m-2" onClick={() => filterProduct("Electronics")}>Electronics</button>
+          <button className="btn btn-outline-dark btn-sm m-2" onClick={() => filterProduct("Furniture")}>Furniture</button>
+          <button className="btn btn-outline-dark btn-sm m-2" onClick={() => filterProduct("Toys")}>Toys</button>
         </div>
 
         {filter.map((product) => {
           return (
             <div id={product.id} key={product.id} className="col-md-4 col-sm-6 col-xs-8 col-12 mb-4">
-              <div className="card text-center h-100" key={product.id}>
+              <div className="card text-center h-100">
                 <img
                   className="card-img-top p-3"
-                  src={product.image}
-                  alt="Card"
+                  src={product.images[0]}
+                  alt={product.title}
                   height={300}
                 />
                 <div className="card-body">
@@ -118,7 +96,7 @@ const Products = () => {
                   <li className="list-group-item lead">$ {product.price}</li>
                 </ul>
                 <div className="card-body">
-                  <Link to={"/product/" + product.id} className="btn btn-dark m-1">
+                  <Link to={`/product/${product.id}`} className="btn btn-dark m-1">
                     Buy Now
                   </Link>
                   <button className="btn btn-dark m-1" onClick={() => addProduct(product)}>

@@ -16,12 +16,12 @@ const Footer = () => {
             <div class="col-lg-3 pt-5  pt-lg-0 col-sm-6">
               <div class="logo pcLogo pb-3">
                 {/* <Link to="https://www.thapar.edu/"> */}
-                <img src={Logo} alt="Thapar-Logo" className="img-fluid" />
+                <img src={Logo} alt="logo" className="img-fluid" />
                 {/* </Link> */}
               </div>
               <div class=" text-white pt-2 pb-3">
                 <h6 className="liWrapper">
-                  this is our kapdalelo website where you can see differeent
+                  This is our kapdalelo website where you can see different
                   type of fashion clothes with affordable price .
                 </h6>
               </div>
