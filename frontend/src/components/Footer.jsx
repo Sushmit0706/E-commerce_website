@@ -57,7 +57,7 @@ const Footer = () => {
                       <i class="fa-brands fa-instagram"></i>
                       {/* </a> */}
                       {/* <a href="https://in.pinterest.com/pin/1061160730921621150/"> */}
-                      <i class="fa-brands fa-pinterest"></i>
+                      <i class="fa-brands fa-linkedin"></i>
                       {/* </a> */}
                     </div>
                   </div>
@@ -138,7 +138,7 @@ const Footer = () => {
                 <div class="col-lg-4 order-3 order-md-1">
                   <h6 className="condition mb-0">
                     <i class="fa-regular fa-copyright"></i>
-                    Thapar Institute of Engineering & Technology, {currentYear}
+                    Kapda Lelo, {currentYear}
                   </h6>
                 </div>
                 <div class="col-lg-4 order-1 order-md-2 ">
@@ -149,8 +149,8 @@ const Footer = () => {
                 <div class="col-lg-4 order-2 order-md-3">
                   <h6 class="  condition">
                     Website Designed by{" "}
-                    <Link to="https://testknock.com/" target="_blank">
-                      TestKnock Technologies
+                    <Link to="#" target="_blank">
+                      Kapda Lelo
                     </Link>
                   </h6>
                 </div>

@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import Marquee from "react-fast-marquee";
 import { useDispatch } from "react-redux";
 import { addCart } from "../redux/action";
+import axios from "axios";
 
 import { Footer, Navbar } from "../components";
 
@@ -24,17 +25,42 @@ const Product = () => {
     const getProduct = async () => {
       setLoading(true);
       setLoading2(true);
-      const response = await fetch(`https://fakestoreapi.com/products/${id}`);
-      const data = await response.json();
-      setProduct(data);
-      setLoading(false);
-      const response2 = await fetch(
-        `https://fakestoreapi.com/products/category/${data.category}`
-      );
-      const data2 = await response2.json();
-      setSimilarProducts(data2);
-      setLoading2(false);
+
+      const options = {
+        method: 'GET',
+        url: `https://zappos1.p.rapidapi.com/products/${id}`,
+        headers: {
+          'X-RapidAPI-Key': '2c194e6fc2mshabe41a2bb5f7224p10af16jsndfe983f5ccfd',
+          'X-RapidAPI-Host': 'zappos1.p.rapidapi.com'
+        }
+      };
+
+      try {
+        const response = await axios.request(options);
+        const data = response.data;
+        setProduct(data);
+        setLoading(false);
+
+        const options2 = {
+          method: 'GET',
+          url: `https://zappos1.p.rapidapi.com/products/category/${data.category}`,
+          headers: {
+            'X-RapidAPI-Key': '2c194e6fc2mshabe41a2bb5f7224p10af16jsndfe983f5ccfd',
+            'X-RapidAPI-Host': 'zappos1.p.rapidapi.com'
+          }
+        };
+
+        const response2 = await axios.request(options2);
+        const data2 = response2.data;
+        setSimilarProducts(data2);
+        setLoading2(false);
+      } catch (error) {
+        console.error(error);
+        setLoading(false);
+        setLoading2(false);
+      }
     };
+
     getProduct();
   }, [id]);
 
@@ -82,7 +108,7 @@ const Product = () => {
                 {product.rating && product.rating.rate}{" "}
                 <i className="fa fa-star"></i>
               </p>
-              <h3 className="display-6  my-4">${product.price}</h3>
+              <h3 className="display-6 my-4">${product.price}</h3>
               <p className="lead">{product.description}</p>
               <button
                 className="btn btn-outline-dark"
@@ -143,9 +169,6 @@ const Product = () => {
                       {item.title.substring(0, 15)}...
                     </h5>
                   </div>
-                  {/* <ul className="list-group list-group-flush">
-                    <li className="list-group-item lead">${product.price}</li>
-                  </ul> */}
                   <div className="card-body">
                     <Link
                       to={"/product/" + item.id}
@@ -168,6 +191,7 @@ const Product = () => {
       </>
     );
   };
+
   return (
     <>
       <Navbar />
@@ -175,12 +199,8 @@ const Product = () => {
         <div className="row">{loading ? <Loading /> : <ShowProduct />}</div>
         <div className="row my-5 py-5">
           <div className="d-none d-md-block">
-          <h2 className="">You may also Like</h2>
-            <Marquee
-              pauseOnHover={true}
-              pauseOnClick={true}
-              speed={50}
-            >
+            <h2 className="">You may also Like</h2>
+            <Marquee pauseOnHover={true} pauseOnClick={true} speed={50}>
               {loading2 ? <Loading2 /> : <ShowSimilarProduct />}
             </Marquee>
           </div>

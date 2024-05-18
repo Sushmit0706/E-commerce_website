@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { addCart } from "../redux/action";
-
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const Products = () => {
   const [data, setData] = useState([]);
@@ -16,16 +15,30 @@ const Products = () => {
   const dispatch = useDispatch();
 
   const addProduct = (product) => {
-    dispatch(addCart(product))
-  }
+    dispatch(addCart(product));
+  };
 
   useEffect(() => {
     const getProducts = async () => {
       setLoading(true);
-      const response = await fetch("https://fakestoreapi.com/products/");
-      if (componentMounted) {
-        setData(await response.clone().json());
-        setFilter(await response.json());
+      const options = {
+        method: 'GET',
+        url: 'https://zappos1.p.rapidapi.com/brands/list',
+        headers: {
+          'X-RapidAPI-Key': '2c194e6fc2mshabe41a2bb5f7224p10af16jsndfe983f5ccfd',
+          'X-RapidAPI-Host': 'zappos1.p.rapidapi.com'
+        }
+      };
+
+      try {
+        const response = await axios.request(options);
+        if (componentMounted) {
+          setData(response.data);
+          setFilter(response.data);
+          setLoading(false);
+        }
+      } catch (error) {
+        console.error(error);
         setLoading(false);
       }
 
@@ -68,7 +81,8 @@ const Products = () => {
   const filterProduct = (cat) => {
     const updatedList = data.filter((item) => item.category === cat);
     setFilter(updatedList);
-  }
+  };
+
   const ShowProducts = () => {
     return (
       <>
@@ -102,8 +116,6 @@ const Products = () => {
                 </div>
                 <ul className="list-group list-group-flush">
                   <li className="list-group-item lead">$ {product.price}</li>
-                  {/* <li className="list-group-item">Dapibus ac facilisis in</li>
-                    <li className="list-group-item">Vestibulum at eros</li> */}
                 </ul>
                 <div className="card-body">
                   <Link to={"/product/" + product.id} className="btn btn-dark m-1">
@@ -115,12 +127,12 @@ const Products = () => {
                 </div>
               </div>
             </div>
-
           );
         })}
       </>
     );
   };
+
   return (
     <>
       <div className="container my-3 py-3">
