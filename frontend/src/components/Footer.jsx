@@ -43,9 +43,9 @@ const Footer = () => {
                     <i className="fa-solid fa-location-dot"></i>
                     <h6>abcd123@gmail.com</h6>
                   </div>
-                  <h6 className="liWrapper mb-0 d-flex justify-content-start align-items-center gap-3">
+                  {/* <h6 className="liWrapper mb-0 d-flex justify-content-start align-items-center gap-3">
                     <i className="fa-solid fa-paper-plane"></i>
-                  </h6>
+                  </h6> */}
                   <div className="social ms-4 ps-2">
                     <h6 className="text-white">Follow us</h6>
                     <div className="icons d-flex align-items-start gap-3">
@@ -62,22 +62,22 @@ const Footer = () => {
               <div className="text-white pt-5 pt-lg-0 ps-lg-3">
                 <h6 className="fw-bolder quickHeading">Modules</h6>
                 <div className="pt-sm-5 pt-lg-5 pt-3 d-flex flex-column gap-4">
-                  <Link to="/">
+                  <Link to="/" className="no-underline">
                     <h6 className="liWrapper d-flex justify-content-start align-items-center gap-3">
                       <i className="fa-solid fa-file"></i>Home
                     </h6>
                   </Link>
-                  <Link to="/product">
+                  <Link to="/product" className="no-underline">
                     <h6 className="d-flex justify-content-start align-items-center gap-3">
                       <i className="fa-solid fa-file"></i>Products
                     </h6>
                   </Link>
-                  <Link to="/about">
+                  <Link to="/about" className="no-underline">
                     <h6 className="d-flex justify-content-start align-items-center gap-3">
                       <i className="fa-solid fa-file"></i>About us
                     </h6>
                   </Link>
-                  <Link to="/contact">
+                  <Link to="/contact" className="no-underline">
                     <h6 className="d-flex justify-content-start align-items-center gap-3 mb-0">
                       <i className="fa-solid fa-file"></i>Contact us
                     </h6>
@@ -90,22 +90,22 @@ const Footer = () => {
               <div className="text-white pt-5 pt-lg-0 pe-md-2">
                 <h6 className="quickHeading fw-bold">Any Technical Issue?</h6>
                 <div className="pt-sm-5 pt-lg-5 pt-3 d-flex flex-column gap-4">
-                  <a href="https://testknock.com/">
+                  <div className="no-underline">
                     <div className="liWrapper d-flex justify-content-start align-items-center gap-3">
                       <i className="fa-solid fa-building"></i>
                       <h6>abcd....</h6>
                     </div>
-                  </a>
+                  </div>
                   <div className="liWrapper d-flex justify-content-start align-items-center gap-3">
                     <i className="fa-solid fa-location-dot"></i>
                     <h6>example</h6>
                   </div>
-                  <a href="mailto:info@testknock.com">
+                  <div className="no-underline">
                     <div className="liWrapper mb-0 d-flex justify-content-start align-items-center gap-3">
                       <i className="fa-solid fa-paper-plane"></i>
                       <h6>example@gamil.com</h6>
                     </div>
-                  </a>
+                  </div>
                   <div className="liWrapper d-flex justify-content-start align-items-center gap-3">
                     <i className="fa-solid fa-phone-volume"></i>
                     <h6 className="d-flex justify-content-center align-items-center">

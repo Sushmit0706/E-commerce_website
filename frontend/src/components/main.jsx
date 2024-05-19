@@ -11,9 +11,6 @@ const Home = () => {
         <div className="card bg-dark text-white border-0 mx-3">
           <div className="card-img-overlay d-flex align-items-center">
             <div className="container">
-              <h5 className="card-title fs-1 text fw-lighter">
-                New Season Arrivals
-              </h5>
             </div>
           </div>
         </div>
@@ -32,7 +29,7 @@ const Home = () => {
             <img src={require("../assets/women 1.webp")} alt="imageee 1" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src={require("../assets/men 1.jpg")} alt="imageee 2" />
+            <img src={require("../assets/men.jpg")} alt="imageee 2" />
           </SwiperSlide>
           <SwiperSlide>
             <img src={require("../assets/kids.jpg")} alt="imageee 3" />

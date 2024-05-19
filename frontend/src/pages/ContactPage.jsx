@@ -179,7 +179,7 @@ const ContactPage = () => {
   return (
     <div className={` ${theme}`}>
       <Navbar theme={theme} setTheme={setTheme} />
-      <div className="contact-bg">
+      <div className="background-image">
         <div className="container my-3 py-3">
           <h1 className="text-center text-white">Contact Us</h1>
           <hr className="bg-white" />
