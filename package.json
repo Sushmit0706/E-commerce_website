@@ -16,6 +16,7 @@
     "concurrently": "^7.0.0"
   },
   "dependencies": {
+    "emailjs-com": "^3.2.0",
     "react-router-dom": "^6.23.1"
   }
 }
