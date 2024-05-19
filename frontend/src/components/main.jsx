@@ -29,16 +29,16 @@ const Home = () => {
           onSlideChange={() => console.log("slide change")}
         >
           <SwiperSlide>
-            <img src={require("../assets/img1.jpeg")} alt="imageee 1" />
+            <img src={require("../assets/women 1.webp")} alt="imageee 1" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src={require("../assets/img2.jpeg")} alt="imageee 2" />
+            <img src={require("../assets/men 1.jpg")} alt="imageee 2" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src={require("../assets/img3.jpeg")} alt="imageee 3" />
+            <img src={require("../assets/kids.jpg")} alt="imageee 3" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src={require("../assets/img2.jpeg")} alt="imageee 4" />
+            <img src={require("../assets/clothes.jpg")} alt="imageee 4" />
           </SwiperSlide>
         </Swiper>
       </div>

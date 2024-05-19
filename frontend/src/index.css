@@ -67,3 +67,23 @@
 .dark .toggle-icon {
   filter: invert(1); /* Invert colors for dark theme toggle */
 }
+
+
+.swiper-slide img {
+  width:105%;
+  height:400px; /* Set the height you desire */
+  object-fit: cover;
+}
+
+.contact-bg {
+  background: url('../src/assets/contact.jpeg') no-repeat center center;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.about-bg {
+  background: url('../src/assets/aboutus.jpeg') no-repeat center center;
+  background-size: cover;
+  min-height: 100vh;
+  padding: 3rem 0;
+}
