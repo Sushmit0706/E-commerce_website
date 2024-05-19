@@ -147,7 +147,7 @@ const Products = () => {
   };
 
   return (
-    <>
+    // <div className="background-image">
       <div className="container my-3 py-3">
         <div className="row">
           <div className="col-12">
@@ -161,7 +161,7 @@ const Products = () => {
           {loading ? <Loading /> : <ShowProducts />}
         </div>
       </div>
-    </>
+    // </div>
   );
 };
 
