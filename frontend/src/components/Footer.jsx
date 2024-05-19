@@ -21,8 +21,12 @@ const Footer = () => {
               </div>
               <div class=" text-white pt-2 pb-3">
                 <h6 className="liWrapper">
-                  This is our kapdalelo website where you can see different
-                  type of fashion clothes with affordable price .
+                  Welcome to Kapdalelo - Your ultimate destination for
+                  affordable fashion. Explore an extensive collection of stylish
+                  clothing for men, women, and kids, all at unbeatable prices.
+                  From trendy outfits to timeless classics, we have something
+                  for every fashion lover.Shop now and elevate your wardrobe
+                  without breaking the bank!.
                 </h6>
               </div>
             </div>
@@ -31,12 +35,10 @@ const Footer = () => {
               <div class="contactContent pt-5 pt-lg-0 text-white ps-lg-3 pe-md-2">
                 <h6 class="quickHeading fw-bold">Contact</h6>
                 <div class=" pt-lg-5 pt-sm-5 pt-3 d-flex flex-column gap-4">
-                  {/* <a href="https://www.thapar.edu/"> */}
                   <div class="liWrapper d-flex justify-content-start align-items-center gap-3">
                     <i class="fa-solid fa-building"></i>
                     <h6>abcd ....</h6>
                   </div>
-                  {/* </a> */}
                   <div class="liWrapper d-flex justify-content-start align-items-center gap-3">
                     <i class="fa-solid fa-location-dot"></i>
                     <h6>abcd123@gmail.com</h6>
@@ -44,9 +46,7 @@ const Footer = () => {
                   {/* <a href="mailto:training@thapar.edu"> */}
                   <h6 class="liWrapper mb-0 d-flex justify-content-start  align-items-center gap-3">
                     <i class="fa-solid fa-paper-plane"></i>
-                    {/* <h6>training@thapar.edu</h6> */}
                   </h6>
-                  {/* </a> */}
                   <div class="social ms-4 ps-2">
                     <h6 className="text-white">Follow us</h6>
                     <div class="icons  d-flex align-items-start gap-3">
@@ -75,18 +75,18 @@ const Footer = () => {
                   </Link>
 
                   <Link to="/product">
-                    <h6 className="liWrapper d-flex justify-content-start  align-items-center gap-3">
+                    <h6 className=" d-flex justify-content-start  align-items-center gap-3">
                       <i class="fa-solid fa-file"></i>Products
                     </h6>
                   </Link>
 
                   <Link to="/about">
-                    <h6 className="liWrapper d-flex justify-content-start  align-items-center gap-3">
+                    <h6 className=" d-flex justify-content-start  align-items-center gap-3">
                       <i class="fa-solid fa-file"></i>About us
                     </h6>
                   </Link>
                   <Link to="/contact">
-                    <h6 className="liWrapper d-flex justify-content-start  align-items-center gap-3 mb-0">
+                    <h6 className=" d-flex justify-content-start  align-items-center gap-3 mb-0">
                       <i class="fa-solid fa-file"></i> Contact us
                     </h6>
                   </Link>
@@ -105,9 +105,7 @@ const Footer = () => {
                   </a>
                   <div class="liWrapper d-flex justify-content-start align-items-center gap-3">
                     <i class="fa-solid fa-location-dot"></i>
-                    <h6>
-                     example 
-                    </h6>
+                    <h6>example</h6>
                   </div>
                   <a href="mailto:info@testknock.com">
                     <div class=" liWrapper mb-0 d-flex justify-content-start  align-items-center gap-3">
@@ -116,12 +114,12 @@ const Footer = () => {
                     </div>
                   </a>
                   {/* <a href="tel:9953617456"> */}
-                    <div class="liWrapper d-flex justify-content-start align-items-center gap-3">
-                      <i class="fa-solid fa-phone-volume"></i>
-                      <h6 className="d-flex justify-content-center align-items-center">
-                        {/* +91- 9953617456<br></br> */}
-                      </h6>
-                    </div>
+                  <div class="liWrapper d-flex justify-content-start align-items-center gap-3">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    <h6 className="d-flex justify-content-center align-items-center">
+                      {/* +91- 9953617456<br></br> */}
+                    </h6>
+                  </div>
                   {/* </a> */}
                 </div>
               </div>
