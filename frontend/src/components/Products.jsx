@@ -67,16 +67,45 @@ const Products = () => {
     return (
       <>
         <div className="buttons text-center py-5">
-          <button className="btn btn-outline-dark btn-sm m-2" onClick={() => setFilter(data)}>All</button>
-          <button className="btn btn-outline-dark btn-sm m-2" onClick={() => filterProduct("Clothes")}>Clothes</button>
-          <button className="btn btn-outline-dark btn-sm m-2" onClick={() => filterProduct("Electronics")}>Electronics</button>
-          <button className="btn btn-outline-dark btn-sm m-2" onClick={() => filterProduct("Furniture")}>Furniture</button>
-          <button className="btn btn-outline-dark btn-sm m-2" onClick={() => filterProduct("Toys")}>Toys</button>
+          <button
+            className="btn btn-outline-dark btn-sm m-2 animate-heading"
+            onClick={() => setFilter(data)}
+          >
+            All
+          </button>
+          <button
+            className="btn btn-outline-dark btn-sm m-2 animate-heading"
+            onClick={() => filterProduct("Clothes")}
+          >
+            Clothes
+          </button>
+          <button
+            className="btn btn-outline-dark btn-sm m-2 animate-heading"
+            onClick={() => filterProduct("Electronics")}
+          >
+            Electronics
+          </button>
+          <button
+            className="btn btn-outline-dark btn-sm m-2 animate-heading"
+            onClick={() => filterProduct("Furniture")}
+          >
+            Furniture
+          </button>
+          <button
+            className="btn btn-outline-dark btn-sm m-2 animate-heading"
+            onClick={() => filterProduct("Toys")}
+          >
+            Toys
+          </button>
         </div>
 
         {filter.map((product) => {
           return (
-            <div id={product.id} key={product.id} className="col-md-4 col-sm-6 col-xs-8 col-12 mb-4">
+            <div
+              id={product.id}
+              key={product.id}
+              className="col-md-4 col-sm-6 col-xs-8 col-12 mb-4 animate-heading"
+            >
               <div className="card text-center h-100">
                 <img
                   className="card-img-top p-3"
@@ -96,10 +125,16 @@ const Products = () => {
                   <li className="list-group-item lead">₹ {product.price}</li>
                 </ul>
                 <div className="card-body">
-                  <Link to={`/product/${product.id}`} className="btn btn-dark m-1">
+                  <Link
+                    to={`/product/${product.id}`}
+                    className="btn btn-dark m-1"
+                  >
                     Buy Now
                   </Link>
-                  <button className="btn btn-dark m-1" onClick={() => addProduct(product)}>
+                  <button
+                    className="btn btn-dark m-1"
+                    onClick={() => addProduct(product)}
+                  >
                     Add to Cart
                   </button>
                 </div>
@@ -116,7 +151,9 @@ const Products = () => {
       <div className="container my-3 py-3">
         <div className="row">
           <div className="col-12">
-            <h2 className="display-5 text-center ">Latest Products</h2>
+            <h2 className="display-5 text-center  animate-heading">
+              Latest Products
+            </h2>
             <hr />
           </div>
         </div>

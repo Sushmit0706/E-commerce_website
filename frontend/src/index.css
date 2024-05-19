@@ -71,22 +71,21 @@
 
 .swiper-slide img {
   width:105%;
-  height:400px; /* Set the height you desire */
+  height:450px; /* Set the height you desire */
   object-fit: cover;
 }
 
-.contact-bg {
+/* .contact-bg {
   background: url('../src/assets/contact.jpeg') no-repeat center center;
-  background-size: cover;
-  min-height: 100vh;
+ background-size: cover;
+  background-position: center;
 }
 
 .about-bg {
   background: url('../src/assets/aboutus.jpeg') no-repeat center center;
   background-size: cover;
-  min-height: 100vh;
-  padding: 3rem 0;
-}
+  background-position: center;
+} */
 
 /* index.css */
 .product-page {
@@ -102,3 +101,98 @@
 .navbar {
   z-index: 1000; /* Ensure navbar is on top */
 }
+
+/* Add this CSS code to your stylesheet */
+.card.hover-effect {
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.card.hover-effect:hover {
+  transform: translateY(-10px);
+  background-color: #f8f9fa; /* Light grey background on hover */
+}
+
+.card.hover-effect .card-img-top {
+  transition: transform 0.3s;
+}
+
+.card.hover-effect:hover .card-img-top {
+  transform: scale(1.1);
+}
+
+.hover-text {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.hover-text:hover {
+  color: #007bff; /* Change to your desired color */
+  transform: scale(1.05);
+}
+
+.animate-heading {
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hover-effect {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-effect:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.login-bg {
+  background-image: url('../src/assets/aboutus.jpeg'); /* Add your background image URL */
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.register-bg {
+  background-image: url('../src/assets/aboutus.jpeg'); /* Add your background image URL */
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.no-underline {
+  text-decoration: none;
+  color: inherit; /* Ensure it takes the inherited color */
+}
+
+.no-underline:hover {
+  text-decoration: none;
+  color: inherit; /* Ensure it remains without underline on hover */
+}
+
+.background-image {
+  background-image: url('../src/assets/aboutus.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+
+.background-image {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+
+
+
