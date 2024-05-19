@@ -87,3 +87,18 @@
   min-height: 100vh;
   padding: 3rem 0;
 }
+
+/* index.css */
+.product-page {
+  background-image: url('../src/assets/aboutus.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  padding-top: 100px; /* adjust if needed for Navbar height */
+}
+
+
+.navbar {
+  z-index: 1000; /* Ensure navbar is on top */
+}

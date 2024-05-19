@@ -67,13 +67,16 @@
 // export default AboutPage
 
 import React from "react";
+import { useState } from "react";
 import { Footer, Navbar } from "../components";
 
 
+ 
 const AboutPage = () => {
+  const [theme, setTheme] = useState("light");
   return (
-    <>
-      <Navbar />
+     <div className={` ${theme}`}>
+      <Navbar theme={theme} setTheme={setTheme} />
       <div className="about-bg">
         <div className="container my-3 py-3">
           <h1 className="text-center text-white">About Us</h1>
@@ -153,7 +156,7 @@ const AboutPage = () => {
         </div>
       </div>
       <Footer />
-    </>
+    </div>
   );
 };
 

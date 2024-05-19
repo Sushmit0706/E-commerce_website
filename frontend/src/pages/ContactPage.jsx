@@ -60,13 +60,15 @@
 // export default ContactPage;
 
 import React from "react";
+import { useState } from "react";
 import { Footer, Navbar } from "../components";
 
 
 const ContactPage = () => {
+  const [theme, setTheme] = useState("light");
   return (
-    <>
-      <Navbar />
+    <div className={` ${theme}`}>
+      <Navbar theme={theme} setTheme={setTheme} />
       <div className="contact-bg">
         <div className="container my-3 py-3">
           <h1 className="text-center text-white">Contact Us</h1>
@@ -122,7 +124,7 @@ const ContactPage = () => {
         </div>
       </div>
       <Footer />
-    </>
+    </div>
   );
 };
 
