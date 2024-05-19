@@ -162,7 +162,6 @@ const Product = () => {
   return (
     <>
       <Navbar />
-      <div className="background-image">
         <div className="container">
           <div className="row">{loading ? <Loading /> : <ShowProduct />}</div>
           <div className="row my-5 py-5">
@@ -174,7 +173,6 @@ const Product = () => {
             </div>
           </div>
         </div>
-      </div>
       <Footer />
     </>
   );
