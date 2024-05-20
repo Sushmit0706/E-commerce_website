@@ -152,7 +152,7 @@ const AboutPage = () => {
           <div className="row">
             <div className="col-md-3 col-sm-6 mb-3 px-3">
               <Link
-                to="/products/mens-clothing"
+                to="/product"
                 className="text-decoration-none"
               >
                 <div className="card h-100 hover-effect">
@@ -170,7 +170,7 @@ const AboutPage = () => {
             </div>
             <div className="col-md-3 col-sm-6 mb-3 px-3">
               <Link
-                to="/products/womens-clothing"
+                to="/product"
                 className="text-decoration-none"
               >
                 <div className="card h-100 hover-effect">
@@ -187,7 +187,7 @@ const AboutPage = () => {
               </Link>
             </div>
             <div className="col-md-3 col-sm-6 mb-3 px-3">
-              <Link to="/products/jewelry" className="text-decoration-none">
+              <Link to="/product" className="text-decoration-none">
                 <div className="card h-100 hover-effect">
                   <img
                     className="card-img-top img-fluid"
@@ -202,7 +202,7 @@ const AboutPage = () => {
               </Link>
             </div>
             <div className="col-md-3 col-sm-6 mb-3 px-3">
-              <Link to="/products/electronics" className="text-decoration-none">
+              <Link to="/product" className="text-decoration-none">
                 <div className="card h-100 hover-effect">
                   <img
                     className="card-img-top img-fluid"

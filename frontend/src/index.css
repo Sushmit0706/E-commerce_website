@@ -191,7 +191,7 @@
 
 /* styles.css */
 .team-bg {
-  background-image: url('https://via.placeholder.com/1200x800'); /* Replace with your background image URL */
+  background-image: url('../src/assets/aboutus.jpeg'); /* Replace with your background image URL */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -214,4 +214,4 @@
   height: 100%;
 }
 
-/* styles.css */
+
