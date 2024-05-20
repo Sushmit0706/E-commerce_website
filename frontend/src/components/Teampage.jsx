@@ -88,7 +88,7 @@ const Teampage = () => {
               />
               <div className="card-body">
                 <h5 className="card-title">Sushmit Srivastava</h5>
-                <p className="card-text">Student</p>
+                <p className="card-text">Fullstack Developer</p>
               </div>
             </div>
           </div>
@@ -101,7 +101,7 @@ const Teampage = () => {
               />
               <div className="card-body">
                 <h5 className="card-title">Punit Saini</h5>
-                <p className="card-text">Student</p>
+                <p className="card-text">Graphic Designer</p>
               </div>
             </div>
           </div>
@@ -114,7 +114,7 @@ const Teampage = () => {
               />
               <div className="card-body">
                 <h5 className="card-title">Gaurav Kumar</h5>
-                <p className="card-text">Student</p>
+                <p className="card-text">Manual Tester</p>
               </div>
             </div>
           </div>
@@ -127,7 +127,7 @@ const Teampage = () => {
               />
               <div className="card-body">
                 <h5 className="card-title">Yojana Tripathi</h5>
-                <p className="card-text">Student</p>
+                <p className="card-text">Frontend Developer</p>
               </div>
             </div>
           </div>
