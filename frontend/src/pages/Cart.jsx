@@ -1,12 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Footer, Navbar } from "../components";
 import { useSelector, useDispatch } from "react-redux";
-import { addCart, delCart } from "../redux/action";
+import { addCart, delCart, setCart } from "../redux/action";
 import { Link } from "react-router-dom";
 
 const Cart = () => {
   const state = useSelector((state) => state.handleCart);
   const dispatch = useDispatch();
+
+  // Load cart items from local storage on component mount
+  useEffect(() => {
+    const savedCart = localStorage.getItem("cart");
+    if (savedCart) {
+      dispatch(setCart(JSON.parse(savedCart)));
+    }
+  }, [dispatch]);
+
+  // Save cart items to local storage whenever the cart state changes
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(state));
+  }, [state]);
 
   const EmptyCart = () => {
     return (
@@ -26,6 +39,7 @@ const Cart = () => {
   const addItem = (product) => {
     dispatch(addCart(product));
   };
+
   const removeItem = (product) => {
     dispatch(delCart(product));
   };
@@ -34,12 +48,9 @@ const Cart = () => {
     let subtotal = 0;
     let shipping = 30.0;
     let totalItems = 0;
-    state.map((item) => {
-      return (subtotal += item.price * item.qty);
-    });
-
-    state.map((item) => {
-      return (totalItems += item.qty);
+    state.forEach((item) => {
+      subtotal += item.price * item.qty;
+      totalItems += item.qty;
     });
 
     return (
@@ -111,7 +122,7 @@ const Cart = () => {
                               <p className="text-start text-md-center">
                                 <strong>
                                   <span className="text-muted">{item.qty}</span>{" "}
-                                  x ${item.price}
+                                  x ₹{item.price}
                                 </strong>
                               </p>
                             </div>
@@ -132,18 +143,18 @@ const Cart = () => {
                   <div className="card-body">
                     <ul className="list-group list-group-flush">
                       <li className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
-                        Products ({totalItems})<span>${Math.round(subtotal)}</span>
+                        Products ({totalItems})<span>₹{Math.round(subtotal)}</span>
                       </li>
                       <li className="list-group-item d-flex justify-content-between align-items-center px-0">
                         Shipping
-                        <span>${shipping}</span>
+                        <span>₹{shipping}</span>
                       </li>
                       <li className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
                         <div>
                           <strong>Total amount</strong>
                         </div>
                         <span>
-                          <strong>${Math.round(subtotal + shipping)}</strong>
+                          <strong>₹{Math.round(subtotal + shipping)}</strong>
                         </span>
                       </li>
                     </ul>
