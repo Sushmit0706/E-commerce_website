@@ -10,7 +10,7 @@ const Checkout = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
@@ -18,14 +18,39 @@ const Checkout = () => {
       alert("Please fill out all required fields.");
     } else {
       setIsSubmitting(true);
-      setTimeout(() => {
+      try {
+        const response = await fetch('/checkout', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            firstName: form.elements.firstName.value,
+            lastName: form.elements.lastName.value,
+            email: form.elements.email.value,
+            address: form.elements.address.value,
+            address2: form.elements.address2.value,
+            country: form.elements.country.value,
+            state: form.elements.state.value,
+            zip: form.elements.zip.value,
+            // Add other form fields as needed
+          }),
+        });
+        if (!response.ok) {
+          throw new Error('Failed to submit form');
+        }
         setIsSubmitting(false);
         navigate("/OrderConfirmed");
-      }, 2000);
-      console.log("Payment form submitted!");
+        console.log("Payment form submitted!");
+      } catch (error) {
+        console.error(error);
+        alert("Failed to submit form. Please try again.");
+        setIsSubmitting(false);
+      }
     }
     form.classList.add('was-validated');
   };
+  
 
   const EmptyCart = () => {
     return (

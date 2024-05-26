@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import Marquee from "react-fast-marquee";
 import { useDispatch } from "react-redux";
 import { addCart } from "../redux/action";
+// import axios from "axios";
 
 import { Footer, Navbar } from "../components";
 
@@ -19,6 +20,8 @@ const Product = () => {
   const addProduct = (product) => {
     dispatch(addCart(product));
   };
+
+
 
   useEffect(() => {
     const getProduct = async () => {
