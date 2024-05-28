@@ -1,7 +1,8 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
-import logo_light from "../assets/darkbag.png";
+// import logo_light from "../assets/darkbag.png";
+import logoji from "../assets/logoji.jpeg";
 import toogle_dark from "../assets/day.png";
 import toogle_light from "../assets/night.png";
 import "../index.css";
@@ -26,10 +27,10 @@ const Navbar = ({ theme, setTheme }) => {
     <nav className={`navbar ${theme} navbar-expand-lg py-3 sticky-top`}>
       <div className="container">
         <img
-          src={logo_light}
+          src={logoji}
           alt="Logo"
           className="logo"
-          style={{ height: "60px" }}
+          style={{ height: "80px" }}
         />
         <NavLink className="navbar-brand fw-bold fs-4 px-2" to="/">
           Kapda lelo
