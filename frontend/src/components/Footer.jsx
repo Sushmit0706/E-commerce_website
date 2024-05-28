@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Logo from "../assets/lightbag.png";
+// import Logo from "../assets/lightbag.png";
+import loggo from "../assets/logoji.jpeg";
 import "./footer/footer.css";
 
 const Footer = () => {
@@ -17,7 +18,8 @@ const Footer = () => {
           <div className="row footerContent">
             <div className="col-lg-3 pt-5 pt-lg-0 col-sm-6">
               <div className="logo pcLogo pb-3">
-                <img src={Logo} alt="logo" className="img-fluid" />
+                <img src={loggo} alt="logo" className="img-fluid" 
+                style={{ height: "60px" }}/>
               </div>
               <div className="text-white pt-2 pb-3">
                 <h6 className="liWrapper">
