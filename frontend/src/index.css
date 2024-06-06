@@ -308,3 +308,9 @@
   }
 }
 
+.order-confirmed-background {
+   background-image: url('../src/assets/aboutus.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+
