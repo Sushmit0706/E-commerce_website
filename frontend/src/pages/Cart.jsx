@@ -55,7 +55,7 @@ const Cart = ({ theme, setTheme }) => {
 
     return (
       <>
-        <section className="h-100 gradient-custom">
+        <section className="h-full w-full gradient-custom">
           <div className="container py-5">
             <div className="row d-flex justify-content-center my-4">
               <div className="col-md-8">
@@ -184,7 +184,7 @@ const Cart = ({ theme, setTheme }) => {
         {" "}
         {/* Adjust padding-top for the height of the Navbar */}
         <Navbar theme={theme} setTheme={setTheme} cartCount={totalItems} />
-        <div className="container my-3 py-3">
+        <div className="container my-3 py-3 ">
           <h1 className="text-center">Cart</h1>
           <hr />
           {state.length > 0 ? <ShowCart /> : <EmptyCart />}

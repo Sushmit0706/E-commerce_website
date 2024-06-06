@@ -295,3 +295,16 @@
   object-fit: cover;
 }
 
+.image-container {
+  animation: rotateImage 10s infinite linear;
+}
+
+@keyframes rotateImage {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+

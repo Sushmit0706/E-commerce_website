@@ -10,7 +10,7 @@ import { logout } from "../redux/action/authActions";
 const Navbar = ({ theme, setTheme, cartCount }) => {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  const navigate = useNavigate(); 
   
   const toggle_mode = () => {
     theme === "light" ? setTheme("dark") : setTheme("light");
