@@ -187,6 +187,15 @@ const Footer = () => {
 
   return (
     <>
+
+<style>
+        {`
+          @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+          .navbar-brand {
+            font-family: 'Noto Serif', serif;
+          }
+        `}
+      </style>
       <section className="row-10 footer mt-5">
         <div className="container">
           <div className="row footerContent">
@@ -198,7 +207,7 @@ const Footer = () => {
                   className="img-fluid"
                   style={{ height: "60px" }}
                 />
-                <h3 style={{ marginLeft: "10px" }}>Kapdalelo</h3>
+                <h3 className="navbar-brand" style={{ marginLeft: "10px" }}>KAPDA LELO</h3>
               </div>
               <div className="text-white pt-2 pb-3">
                 <h6 className="liWrapper text-justify">
