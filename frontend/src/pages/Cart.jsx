@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { addCart, delCart, setCart } from "../redux/action";
 import { Link } from "react-router-dom";
 
-const Cart = () => {
+const Cart = ({ theme, setTheme }) => {
   const state = useSelector((state) => state.handleCart);
   const dispatch = useDispatch();
 
@@ -143,7 +143,8 @@ const Cart = () => {
                   <div className="card-body">
                     <ul className="list-group list-group-flush">
                       <li className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
-                        Products ({totalItems})<span>₹{Math.round(subtotal)}</span>
+                        Products ({totalItems})
+                        <span>₹{Math.round(subtotal)}</span>
                       </li>
                       <li className="list-group-item d-flex justify-content-between align-items-center px-0">
                         Shipping
@@ -175,15 +176,21 @@ const Cart = () => {
     );
   };
 
+  const totalItems = state.reduce((acc, item) => acc + item.qty, 0);
+
   return (
     <>
-      <Navbar />
-      <div className="container my-3 py-3">
-        <h1 className="text-center">Cart</h1>
-        <hr />
-        {state.length > 0 ? <ShowCart /> : <EmptyCart />}
+      <div style={{ paddingTop: "60px" }}>
+        {" "}
+        {/* Adjust padding-top for the height of the Navbar */}
+        <Navbar theme={theme} setTheme={setTheme} cartCount={totalItems} />
+        <div className="container my-3 py-3">
+          <h1 className="text-center">Cart</h1>
+          <hr />
+          {state.length > 0 ? <ShowCart /> : <EmptyCart />}
+        </div>
+        <Footer />
       </div>
-      <Footer />
     </>
   );
 };

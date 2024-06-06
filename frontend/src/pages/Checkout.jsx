@@ -54,7 +54,7 @@ const Checkout = () => {
 
   const EmptyCart = () => {
     return (
-      <div className="container">
+      <div className="container ">
         <div className="row">
           <div className="col-md-12 py-5 bg-light text-center">
             <h4 className="p-3 display-5">No item in Cart</h4>
