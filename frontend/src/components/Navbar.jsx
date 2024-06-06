@@ -1,25 +1,23 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
-// import logo_light from "../assets/darkbag.png";
 import logoji from "../assets/logoji.jpeg";
 import toogle_dark from "../assets/day.png";
 import toogle_light from "../assets/night.png";
 import "../index.css";
 import { logout } from "../redux/action/authActions";
 
-const Navbar = ({ theme, setTheme }) => {
+const Navbar = ({ theme, setTheme, cartCount }) => {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  
   const toggle_mode = () => {
     theme === "light" ? setTheme("dark") : setTheme("light");
   };
 
   const handleLogout = () => {
-    // Dispatch logout action
     dispatch(logout());
-    // Redirect to home page
     navigate("/");
   };
 
@@ -30,7 +28,7 @@ const Navbar = ({ theme, setTheme }) => {
           src={logoji}
           alt="Logo"
           className="logo"
-          style={{ height: "80px" }}
+          style={{ height: "60px" }}
         />
         <NavLink className="navbar-brand fw-bold fs-4 px-2" to="/">
           Kapda lelo
@@ -88,14 +86,18 @@ const Navbar = ({ theme, setTheme }) => {
                 </NavLink>
               </>
             )}
-            <NavLink to="/cart" className="btn btn-outline-dark m-2">
+            <NavLink to="/cart" className="btn btn-outline-dark m-2 position-relative">
               <i className="fa fa-cart-shopping mr-1"></i> Cart
+              {cartCount > 0 && (
+                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                  {cartCount}
+                </span>
+              )}
             </NavLink>
             <img
               onClick={toggle_mode}
               src={theme === "light" ? toogle_light : toogle_dark}
               alt="Toggle Theme"
-              // className="toggle-icon"
               style={{ height: "40px" }}
             />
           </div>
