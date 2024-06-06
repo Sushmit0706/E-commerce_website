@@ -89,7 +89,8 @@ const Checkout = () => {
                 <div className="card-body">
                   <ul className="list-group list-group-flush">
                     <li className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
-                      Products ({totalItems})<span>₹{Math.round(subtotal)}</span>
+                      Products ({totalItems})
+                      <span>₹{Math.round(subtotal)}</span>
                     </li>
                     <li className="list-group-item d-flex justify-content-between align-items-center px-0">
                       Shipping<span>₹{shipping}</span>
@@ -112,7 +113,11 @@ const Checkout = () => {
                   <h4 className="mb-0">Billing address</h4>
                 </div>
                 <div className="card-body">
-                  <form className="needs-validation" noValidate onSubmit={handleSubmit}>
+                  <form
+                    className="needs-validation"
+                    noValidate
+                    onSubmit={handleSubmit}
+                  >
                     <div className="row g-3">
                       <div className="col-sm-6 my-1">
                         <label htmlFor="firstName" className="form-label">
@@ -156,7 +161,8 @@ const Checkout = () => {
                           required
                         />
                         <div className="invalid-feedback">
-                          Please enter a valid email address for shipping updates.
+                          Please enter a valid email address for shipping
+                          updates.
                         </div>
                       </div>
 
@@ -208,7 +214,33 @@ const Checkout = () => {
                         </label>
                         <select className="form-select" id="state" required>
                           <option value="">Choose...</option>
+                          <option>Andhra Pradesh</option>
+                          <option>Arunachal Pradesh</option>
+                          <option>Assam</option>
+                          <option>Bihar</option>
+                          <option>Chhattisgarh</option>
+                          <option>Goa</option>
+                          <option>Gujarat</option>
+                          <option>Haryana</option>
+                          <option>Himachal Pradesh</option>
+                          <option>Jharkhand</option>
+                          <option>Karnataka</option>
+                          <option>Kerala</option>
+                          <option>Maharashtra</option>
+                          <option>Manipur</option>
+                          <option>Meghalaya</option>
+                          <option>Mizoram</option>
+                          <option>Nagaland</option>
+                          <option>Odisha</option>
                           <option>Punjab</option>
+                          <option>Rajasthan</option>
+                          <option>Sikkim</option>
+                          <option>Tamil Nadu</option>
+                          <option>Telangana</option>
+                          <option>Tripura</option>
+                          <option>Uttar Pradesh</option>
+                          <option>Uttarakhand</option>
+                          <option>West Bengal</option>
                         </select>
                         <div className="invalid-feedback">
                           Please provide a valid state.
@@ -348,11 +380,14 @@ const Checkout = () => {
                       </div>
                     </div>
 
-
                     <hr className="my-4" />
 
-                    <button className="w-100 btn btn-primary" type="submit" disabled={isSubmitting}>
-                      {isSubmitting ? 'Processing...' : 'Continue to checkout'}
+                    <button
+                      className="w-100 btn btn-primary"
+                      type="submit"
+                      disabled={isSubmitting}
+                    >
+                      {isSubmitting ? "Processing..." : "Continue to checkout"}
                     </button>
                   </form>
                 </div>
