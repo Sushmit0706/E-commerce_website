@@ -13,12 +13,12 @@ app.use(bodyParser.json());
 //   password: "1234",
 //   database: "ecom",
 // });
-const connection = mysql.createConnection({
-  host: process.env.DB_HOST,     // ✅ these must be set correctly
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
-});
+// const connection = mysql.createConnection({
+//   host: process.env.DB_HOST,     // ✅ these must be set correctly
+//   user: process.env.DB_USER,
+//   password: process.env.DB_PASSWORD,
+//   database: process.env.DB_NAME,
+// });
 
 
 connection.connect((err) => {
