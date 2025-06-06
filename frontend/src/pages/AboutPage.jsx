@@ -209,11 +209,11 @@ const AboutPage = () => {
               </Link>
             </div>
           </div>
-          <div className="text-center mt-4 p-8">
+          {/* <div className="text-center mt-4 p-8">
             <Link to="/team" className="btn btn-primary">
               Meet Our Team
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
       <Footer />

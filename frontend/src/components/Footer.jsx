@@ -69,13 +69,13 @@ const Footer = () => {
                   <div className="liWrapper d-flex justify-content-start align-items-center gap-3">
                     <i className="fa-solid fa-building"></i>
                     <h6 onClick={(e) => handleContactClick(e, "phone")}>
-                      +91 7041574985
+                      +91-6388488***
                     </h6>
                   </div>
                   <div className="liWrapper d-flex justify-content-start align-items-center gap-3">
                     <i className="fa-solid fa-location-dot"></i>
                     <h6 onClick={(e) => handleContactClick(e, "email")}>
-                      kapda123@gmail.com
+                      support@kapdalelo.com
                     </h6>
                   </div>
                   <div className="social ms-4 ps-2">
@@ -126,26 +126,26 @@ const Footer = () => {
                     <div className="liWrapper d-flex justify-content-start align-items-center gap-3">
                       <i className="fa-solid fa-building"></i>
                       <h6 onClick={(e) => handleContactClick(e, "phone")}>
-                        +91 6388488698
+                        +91-6388488***
                       </h6>
                     </div>
                   </div>
                   <div className="liWrapper d-flex justify-content-start align-items-center gap-3">
                     <i className="fa-solid fa-location-dot"></i>
-                    <h6>280 Block E beta 1 greater nodia</h6>
+                    <h6>Greater Noida ,UP</h6>
                   </div>
                   <div className="no-underline">
                     <div className="liWrapper mb-0 d-flex justify-content-start align-items-center gap-3">
                       <i className="fa-solid fa-paper-plane"></i>
                       <h6 onClick={(e) => handleContactClick(e, "email")}>
-                        tripathiyojana640@gmail.com
+                        support@kapdalelo.com
                       </h6>
                     </div>
                   </div>
                   <div className="liWrapper d-flex justify-content-start align-items-center gap-3">
                     <i className="fa-solid fa-phone-volume"></i>
                     <h6 className="d-flex justify-content-center align-items-center">
-                      +91 7041574985
+                      +91-6388488***
                     </h6>
                   </div>
                 </div>
