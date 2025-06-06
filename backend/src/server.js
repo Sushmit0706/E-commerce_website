@@ -21,13 +21,13 @@ app.use(bodyParser.json());
 // });
 
 
-connection.connect((err) => {
-  if (err) {
-    console.error("Error connecting to MySQL:", err.stack);
-    return;
-  }
-  console.log("Connected to MySQL as id", connection.threadId);
-});
+// connection.connect((err) => {
+//   if (err) {
+//     console.error("Error connecting to MySQL:", err.stack);
+//     return;
+//   }
+//   console.log("Connected to MySQL as id", connection.threadId);
+// });
 
 
 
