@@ -7,12 +7,6 @@ Express
 
 JSON
 
-Markdown
-
-npm
-
-.ENV
-
 JavaScript
 
 React
