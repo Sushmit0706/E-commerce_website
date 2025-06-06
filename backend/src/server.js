@@ -7,12 +7,19 @@ const app = express();
 app.use(bodyParser.json());
 
 
+// const connection = mysql.createConnection({
+//   host: "localhost",
+//   user: "root",
+//   password: "1234",
+//   database: "ecom",
+// });
 const connection = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "1234",
-  database: "ecom",
+  host: process.env.DB_HOST,     // ✅ these must be set correctly
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
 });
+
 
 connection.connect((err) => {
   if (err) {
